@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/alastair87/node-api-workshop/issues"
   },
-  "homepage": "https://github.com/alastair87/node-api-workshop#readme"
+  "homepage": "https://github.com/alastair87/node-api-workshop#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
 }
