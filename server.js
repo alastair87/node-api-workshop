@@ -32,20 +32,20 @@ const albumsData = [
   }
 ];
 
-app.get("/albums", function(req, res) {
+app.get("/albums", (req, res) => {
   res.send(albumsData);
 });
 
-app.get("/albums/:albumId", function(req, res) {
-  // req.params.albumId will match the value in the url after /albums/
+app.get("/albums/:albumId", (req, res) => {
   console.log(req.params.albumId);
-  // now we can use the value for req.params.albumId to find the album requested
-  // how do we "find" something in an array
-
-  // finish the code yourself - it should end with res.send(album) where album is the single album you found  based on the id
   res.send(
     albumsData.find(albumData => albumData.albumId === req.params.albumId)
   );
+});
+
+// notice .post (not .get)
+app.post("/albums", function(req, res) {
+  console.log("POST /albums route");
 });
 
 app.listen(3000, () => {
